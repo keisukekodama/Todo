@@ -31,10 +31,6 @@ const app = new Vue({
       deep: true
     }
   },
-  created() {
-    // インスタンス作成時に自動的に fetch() する
-    this.todos = todoStorage.fetch()
-  },
   methods: {
     // ToDo 追加の処理
     doAdd: function(event, value){
@@ -55,5 +51,9 @@ const app = new Vue({
       // フォーム要素を空にする
       comment.value =''
     }
+  },
+  created() {
+    // インスタンス作成時に自動的に fetch() する
+    this.todos = todoStorage.fetch()
   }
 })
