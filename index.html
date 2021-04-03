@@ -11,6 +11,16 @@
       </thead>
     </table>
     <tbody>
+
+      <h2>
+      <form class="add-form" v-on:submit.prevent="doAdd">
+        <!-- コメント入力フォーム -->
+        コメント  <input type ="text" ref="comment">
+        <!-- 追加ボタンのモック -->
+        <button type = "submit">追加</button>
+
+      </form>
+      </h2>
       <tr v-for="item in todos" v-bind:key="item.id">
         <th>{{ item.id }}</th>
         <td>{{ item.comment }}</td>
