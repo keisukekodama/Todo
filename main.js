@@ -21,6 +21,16 @@ const app = new Vue({
   data:{
     todos:[]
   },
+  watch:{
+    // オプションを使う場合はオブジェクト形式にする
+    todos:{
+      // 引数はウォッチしているプロパティの変更後の値
+      handler: function(todos){
+        todoStorage.save(todos)
+      },
+      deep: true
+    }
+  },
   methods: {
     // ToDo 追加の処理
     doAdd: function(event, value){
@@ -42,5 +52,4 @@ const app = new Vue({
       comment.value =''
     }
   }
-  console.log(event)
 })
